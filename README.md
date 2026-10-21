@@ -95,6 +95,9 @@ target_link_libraries(sample PRIVATE sentry::sentry)
 CI (`.github/workflows/image.yml`) builds the image, exports `symbols` from the same build cache and
 uploads them, so image and symbols always match.
 
+`/trigger` also takes an optional `"dsn"` in the body. The playground sends it when a visitor checks
+**Use my DSN**, then only this one event goes to their project (a separate client, the global one is untouched).
+
 ## Troubleshooting
 
 | Symptom | Why |
